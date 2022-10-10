@@ -1,4 +1,3 @@
-import 'package:project_kuliah/pages/transfer.dart';
 import 'package:flutter/material.dart';
 import 'package:project_kuliah/widget/menu.dart';
 
@@ -79,7 +78,7 @@ class Utama extends StatelessWidget {
                           'Nasabah',
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
-                        Text('Ni Wayan Anik Puspita Sari')
+                        Text('Bambang Tabuthi')
                       ],
                     ),
                   ),
@@ -108,69 +107,69 @@ class Utama extends StatelessWidget {
             ],
           ),
         ),
-        Container(
-          margin: EdgeInsets.all(10),
-          padding: EdgeInsets.all(10),
-          decoration: BoxDecoration(
-              border: Border.all(color: Colors.black),
-              borderRadius: BorderRadius.circular(10),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black,
-                  offset: const Offset(
-                    0.0,
-                    0.0,
-                  ),
-                  blurRadius: 1.0,
-                  spreadRadius: 1.0,
-                ), //BoxShadow
-                BoxShadow(
-                  color: Colors.white,
-                  offset: const Offset(0.0, 0.0),
-                  blurRadius: 0.0,
-                  spreadRadius: 0.0,
-                )
-              ]),
-          child: Wrap(
-            spacing: 27.0,
-            runSpacing: 10.0,
-            children: [
-              Menu(
-                icon: Icons.wallet,
-                text: "Saldo",
-                onTap: () {},
-              ),
-              Menu(
-                icon: Icons.money,
-                text: "Transfer",
-                onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Transfer()));
-                },
-              ),
-              Menu(
-                icon: Icons.savings,
-                text: "Deposito",
-                onTap: () {},
-              ),
-              Menu(
-                icon: Icons.credit_card_outlined,
-                text: "Payment",
-                onTap: () {},
-              ),
-              Menu(
-                icon: Icons.monetization_on_outlined,
-                text: "Pinjaman",
-                onTap: () {},
-              ),
-              Menu(
-                icon: Icons.add_chart,
-                text: "Mutasi",
-                onTap: () {},
-              ),
-            ],
-          ),
-        ),
+        // Container(
+        //   margin: EdgeInsets.all(10),
+        //   padding: EdgeInsets.all(10),
+        //   decoration: BoxDecoration(
+        //       border: Border.all(color: Colors.black),
+        //       borderRadius: BorderRadius.circular(10),
+        //       boxShadow: [
+        //         BoxShadow(
+        //           color: Colors.black,
+        //           offset: const Offset(
+        //             0.0,
+        //             0.0,
+        //           ),
+        //           blurRadius: 1.0,
+        //           spreadRadius: 1.0,
+        //         ), //BoxShadow
+        //         BoxShadow(
+        //           color: Colors.white,
+        //           offset: const Offset(0.0, 0.0),
+        //           blurRadius: 0.0,
+        //           spreadRadius: 0.0,
+        //         )
+        //       ]),
+        //   child: Wrap(
+        //     spacing: 27.0,
+        //     runSpacing: 10.0,
+        //     children: [
+        //       Menu(
+        //         icon: Icons.wallet,
+        //         text: "Saldo",
+        //         onTap: () {},
+        //       ),
+        //       Menu(
+        //         icon: Icons.money,
+        //         text: "Transfer",
+        //         onTap: () {
+        //           Navigator.push(context,
+        //               MaterialPageRoute(builder: (context) => Transfer()));
+        //         },
+        //       ),
+        //       Menu(
+        //         icon: Icons.savings,
+        //         text: "Deposito",
+        //         onTap: () {},
+        //       ),
+        //       Menu(
+        //         icon: Icons.credit_card_outlined,
+        //         text: "Payment",
+        //         onTap: () {},
+        //       ),
+        //       Menu(
+        //         icon: Icons.monetization_on_outlined,
+        //         text: "Pinjaman",
+        //         onTap: () {},
+        //       ),
+        //       Menu(
+        //         icon: Icons.add_chart,
+        //         text: "Mutasi",
+        //         onTap: () {},
+        //       ),
+        //     ],
+        //   ),
+        // ),
         Container(
           margin: EdgeInsets.all(10),
           padding: EdgeInsets.all(10),
@@ -190,7 +189,7 @@ class Utama extends StatelessWidget {
                       style: TextStyle(fontWeight: FontWeight.normal),
                     ),
                     Text(
-                      '0878-1234-1024',
+                      '087102983710',
                       style:
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
                     )
