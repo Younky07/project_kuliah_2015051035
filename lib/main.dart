@@ -1,5 +1,4 @@
 import 'package:project_kuliah/pages/login.dart';
-import 'package:project_kuliah/pages/transfer.dart';
 import 'package:project_kuliah/pages/utama.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -18,7 +17,6 @@ class MyApp extends StatelessWidget {
   static final List<Widget> _pages = <Widget>[
     login(),
     Utama(),
-    Transfer(),
   ];
 
   @override
