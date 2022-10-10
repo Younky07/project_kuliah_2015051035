@@ -1,111 +1,33 @@
+import 'package:project_kuliah/pages/login.dart';
+import 'package:project_kuliah/pages/transfer.dart';
+import 'package:project_kuliah/pages/utama.dart';
 import 'package:flutter/material.dart';
-import 'package:footer/footer.dart';
-import 'package:footer/footer_view.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
-void main() {
+void main() async {
+  await Hive.initFlutter();
+
+  var box = await Hive.openBox("mybox");
+
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
+  static final List<Widget> _pages = <Widget>[
+    login(),
+    Utama(),
+    Transfer(),
+  ];
+
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext contect) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-          appBar: AppBar(
-            backgroundColor: Color.fromARGB(255, 2, 14, 147),
-            title: Center(
-              child: const Text("Koperasi Undiksha"),
-            ),
-            actions: [
-              Container(
-                child: Icon(Icons.logout),
-                padding: EdgeInsets.all(10),
-              )
-            ],
-          ),
-          body: Column(
-            children: [
-              Container(
-                  padding: EdgeInsets.all(25),
-                  child: Center(
-                    child: Image.asset(
-                      'asset/logo1.jpg',
-                      width: 200,
-                      height: 200,
-                      fit: BoxFit.contain,
-                    ),
-                  )),
-              Container(
-                child: Column(children: [
-                  Container(
-                    alignment: Alignment.topLeft,
-                    margin: EdgeInsets.fromLTRB(30, 0, 0, 5),
-                    child: Text('Username'),
-                  ),
-                  SizedBox(
-                    width: 350,
-                    child: TextField(
-                      decoration: InputDecoration(
-                        contentPadding: EdgeInsets.all(20),
-                        border: OutlineInputBorder(),
-                        hintText: 'masukan username anda',
-                      ),
-                    ),
-                  ),
-                  Container(
-                    alignment: Alignment.topLeft,
-                    margin: EdgeInsets.fromLTRB(30, 10, 0, 5),
-                    child: Text('Password'),
-                  ),
-                  SizedBox(
-                    width: 350,
-                    child: TextField(
-                      decoration: InputDecoration(
-                        contentPadding: EdgeInsets.all(20),
-                        border: OutlineInputBorder(),
-                        hintText: 'masukan password anda',
-                      ),
-                    ),
-                  ),
-                  Container(
-                    padding: EdgeInsets.fromLTRB(0, 15, 0, 30),
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        primary: Colors.blue,
-                        fixedSize: Size(200, 35),
-                      ),
-                      onPressed: () {},
-                      child: Text('login'),
-                    ),
-                  ),
-                  Container(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        TextButton(
-                            onPressed: () {}, child: Text('Datar Mbanking')),
-                        TextButton(
-                            onPressed: () {}, child: Text('lupa password?')),
-                      ],
-                    ),
-                  )
-                ]),
-              ),
-              SizedBox(
-                height: 40,
-              ),
-              Container(
-                height: 47,
-                width: 500,
-                color: Colors.grey,
-                alignment: Alignment.center,
-                child: Text('copyright @2022 by undiksha'),
-              )
-            ],
-          )),
+      title: 'DROP',
+      theme: ThemeData.light(),
+      home: login(),
     );
   }
 }
