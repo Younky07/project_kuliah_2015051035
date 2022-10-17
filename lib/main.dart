@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext contect) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'DROP',
+      title: 'Welcome Home',
       theme: ThemeData.light(),
       home: login(),
     );
