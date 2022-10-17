@@ -37,7 +37,8 @@ class _loginState extends State<login> {
                 margin: EdgeInsets.all(10),
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                    border: Border.all(color: Colors.black),
+                    border:
+                        Border.all(color: Color.fromARGB(255, 243, 240, 240)),
                     borderRadius: BorderRadius.circular(10),
                     boxShadow: [
                       BoxShadow(
@@ -97,8 +98,8 @@ class _loginState extends State<login> {
                           fixedSize: Size(200, 35),
                         ),
                         onPressed: () {
-                          if (usernameController.text == "anik" &&
-                              passwordController.text == "anik") {
+                          if (usernameController.text == "younky" &&
+                              passwordController.text == "yosa") {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
