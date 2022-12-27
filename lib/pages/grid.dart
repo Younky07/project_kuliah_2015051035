@@ -1,31 +1,66 @@
-class ListUserModel {
-  ListUserModel({
-    this.id,
-    this.email,
-    this.firstName,
-    this.lastName,
-    this.avatar,
-  });
+import 'package:flutter/material.dart';
 
-  int? id;
-  String? email;
-  String? firstName;
-  String? lastName;
-  String? avatar;
+class grid extends StatefulWidget {
+  grid({Key? key}) : super(key: key);
 
-  factory ListUserModel.fromJson(Map<String, dynamic> json) => ListUserModel(
-        id: json["id"],
-        email: json["email"],
-        firstName: json["first_name"],
-        lastName: json["last_name"],
-        avatar: json["avatar"],
-      );
+  @override
+  State<grid> createState() => _gridState();
+}
 
-  Map<String, dynamic> toJson() => {
-        "id": id,
-        "email": email,
-        "first_name": firstName,
-        "last_name": lastName,
-        "avatar": avatar,
-      };
+class _gridState extends State<grid> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(actions: []),
+      body: LayoutBuilder(
+        builder: (context, constraint) {
+          if (constraint.maxWidth > 500) {
+            return TampilanLebar();
+          } else {
+            return TampilanNormal();
+          }
+        },
+      ),
+    );
+  }
+
+  Widget TampilanLebar() {
+    return Center(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Container(
+            height: 100,
+            width: 100,
+            color: Colors.teal,
+          ),
+          Container(
+            height: 100,
+            width: 100,
+            color: Color.fromARGB(255, 10, 99, 90),
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget TampilanNormal() {
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Container(
+            height: 100,
+            width: 100,
+            color: Colors.teal,
+          ),
+          Container(
+            height: 100,
+            width: 100,
+            color: Color.fromARGB(255, 10, 99, 90),
+          )
+        ],
+      ),
+    );
+  }
 }
